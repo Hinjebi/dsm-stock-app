@@ -14,10 +14,10 @@
         <option id = "3" value="AMZN">Amazon</option>
         <option id = "4" value="META">Meta</option>
         </select>
-       # <p><input type="submit" value="Will the customer subscribe to term-loan?"></p>
+       # <p><input type="submit" value="Predict the Stock Price?" onclick = "get_input()" ></p>
        {% if (results) %} 
+        <h3> Ticker Name: {{ticker}} </h3>
         <h3> Average Stock Price: {{ results }}  </h3>
-
         {% endif %}
         </form>
 </body>
