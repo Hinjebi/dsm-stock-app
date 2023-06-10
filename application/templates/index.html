@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Marketing</title>
+ </head>
+<body>
+        <h2>Welcome to the Stock Prediction App</h2>
+        <h3>Pick a company to generate stock analytics</h3>
+        <form action = "{{ url_for('bankclassify') }}" method="POST">
+        <label for="ticker">Choose a stock:</label>
+        <select name="ticker" id="ticker">
+        <option id = "1" selected hidden>Choose here</option>
+        <option id ="2" value="AAPL">Apple</option>
+        <option id = "3" value="AMZN">Amazon</option>
+        <option id = "4" value="META">Meta</option>
+        </select>
+       # <p><input type="submit" value="Will the customer subscribe to term-loan?"></p>
+       {% if (results) %} 
+        <h3> Average Stock Price: {{ results }}  </h3>
+
+        {% endif %}
+        </form>
+</body>
+</html>
