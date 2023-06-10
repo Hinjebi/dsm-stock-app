@@ -13,8 +13,8 @@ def index():
     return render_template("index.html")
 
 #decorator to access the service
-@app.route("/bankclassify", methods=['GET', 'POST'])
-def bankclassify():
+@app.route("/stock_predict", methods=['GET', 'POST'])
+def stock_predict():
 
     #extract form inputs
     ticker_value = request.form.get("ticker")
