@@ -23,12 +23,15 @@ def stock_predict():
    #convert data to json
     input_data = json.dumps({"ticker": ticker_value})
 
+    companyname_dict = {"AAPL": "Apple", "AMZN": "Amazon", "Meta": "Meta"}
+
     #url for bank marketing model
-    url = "http://localhost:5000/api"
-    #url = "https://bank-model-app.herokuapp.com/api"
+    ##url = "http://localhost:5000/api"
+    url = "https://stockapp.herokuapp.com/api"
   
     #post data to url
     results =  requests.post(url, input_data)
     #send input values and prediction result to index.html for display
-    return render_template("index.html", ticker = ticker_value,  results= results.content.decode('UTF-8'))
+    return render_template("index.html", ticker = ticker_value,  prediction= results.content.decode('UTF-8'), 
+                           company = companyname_dict[ticker_value])
     #return results
